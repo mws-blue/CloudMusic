@@ -4,8 +4,9 @@ import router from './router'
 import store from './store'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
-
-import "./permission"
+// import "./permission"
+import "./assets/js/iconfont"
+import "./assets/css/iconfont.css"
 
 Vue.config.productionTip = false
 
