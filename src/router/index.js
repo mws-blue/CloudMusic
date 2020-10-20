@@ -9,12 +9,44 @@ export const constantRouterMap = [
     { path: "/login", component: () => import("@/view/login/index") },
     {
         path: "/",
-        component: LayOut,
-        redirect:"dashboard",
+        component:LayOut,
+        redirect:"/findmusic/fdstyle",
         children:[
             {
-                path:"dashboard",
-                component:()=>import("../view/home/index")
+                path:"/findmusic",
+                name:"findmusic",
+                component:()=>import("../view/findmusic/index"),
+                children:[
+                    {
+                        path:"fdstyle",
+                        name:"fdstyle",
+                        component:()=>import("../view/findmusic/fdstyle/index"),
+                    }
+                ]
+            }
+        ]
+    },
+    // {
+    //     path:"/findmusic",
+    //     name:"findmusic",
+    //     component:()=>import("../view/findmusic/index"),
+    //     children:[
+    //         {
+    //             path:"fdstyle",
+    //             name:"fdstyle",
+    //             component:()=>import("../view/findmusic/fdstyle/index"),
+    //         }
+    //     ]
+    // },
+    {
+        path:"/recommend",
+        name:"recommend",
+        component:LayOut,
+        children:[
+            {
+                path:"myselfFM",
+                name:"myselfFM",
+                component:()=>import("../view/myselfFM/index")
             }
         ]
     }

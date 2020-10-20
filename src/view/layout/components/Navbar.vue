@@ -27,13 +27,16 @@
         <img class="user-avator" :src="userInfo.profile.avatarUrl" alt="" />
         <el-dropdown trigger="click" @command="handleCommand">
           <span class="el-dropdown-link">
-            {{userInfo.profile.nickname}}<i class="el-icon-arrow-down el-icon--right"></i>
+            <span class="user-name">{{ userInfo.profile.nickname }}</span>
+            <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item icon="el-icon-plus"
               >个人信息设置</el-dropdown-item
             >
-            <el-dropdown-item icon="el-icon-check" command="loginOut">退出登录</el-dropdown-item>
+            <el-dropdown-item icon="el-icon-check" command="loginOut"
+              >退出登录</el-dropdown-item
+            >
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -66,6 +69,18 @@
           </div>
         </el-dialog>
       </div>
+      <div class="ohter-options">
+         <span>开通VIP</span>
+         <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-pifu"></use>
+        </svg>
+        <i class="el-icon-message"></i>
+        <i class="el-icon-setting"></i>
+        <i class="el-icon-copy-document"></i>
+        <i class="el-icon-minus"></i>
+        <i class="el-icon-full-screen"></i>
+        <i class="el-icon-close"></i>
+      </div>
     </div>
   </div>
 </template>
@@ -85,16 +100,20 @@ export default {
       formLabelWidth: "120px",
     };
   },
-  mounted(){
-    console.log(this.cookie,"----")
-     console.log(this.userInfo,'++++')
+  mounted() {
+    console.log(this.cookie, "----");
+    console.log(this.userInfo, "++++");
   },
   computed: {
     cookie() {
-      return this.$store.state.user.cookie?this.$store.state.user.cookie:window.localStorage.getItem("cookie");
+      return this.$store.state.user.cookie
+        ? this.$store.state.user.cookie
+        : window.localStorage.getItem("cookie");
     },
     userInfo() {
-      return this.$store.state.user.userInfo?this.$store.state.user.userInfo:JSON.parse(window.localStorage.getItem("userInfo"));
+      return this.$store.state.user.userInfo
+        ? this.$store.state.user.userInfo
+        : JSON.parse(window.localStorage.getItem("userInfo"));
     },
   },
   methods: {
@@ -108,23 +127,23 @@ export default {
             this.$message("登录成功");
             this.$store.dispatch("setCookie", res.data.cookie);
             this.$store.dispatch("setUserInfo", res.data);
-          }else{
-             this.$message(res.data.message);
+          } else {
+            this.$message(res.data.message);
           }
         })
         .catch((err) => {
           console.log(err);
         });
     },
-    loginOut(){
-      this.$store.dispatch("setCookie",'')
-      this.$store.dispatch("setUserInfo", '');
+    loginOut() {
+      this.$store.dispatch("setCookie", "");
+      this.$store.dispatch("setUserInfo", "");
     },
     handleCommand(command) {
-        if(command === 'loginOut'){
-          this.loginOut()
-        }
+      if (command === "loginOut") {
+        this.loginOut();
       }
+    },
   },
 };
 </script>
@@ -214,6 +233,14 @@ export default {
   cursor: pointer;
   vertical-align: middle;
 }
+.user-name {
+  width: 100px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 2px;
+}
 .el-dropdown {
   color: #c0c0bd;
   font-size: 12px;
@@ -228,5 +255,15 @@ export default {
 }
 .el-dropdown-menu__item {
   font-size: 12px;
+}
+.ohter-options {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.ohter-options i,svg {
+  font-size: 16px;
 }
 </style>

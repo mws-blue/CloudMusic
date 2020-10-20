@@ -1,5 +1,5 @@
 <template>
-  <div>首页初始内容</div>
+  <router-view></router-view>
 </template>
 
 <script>
