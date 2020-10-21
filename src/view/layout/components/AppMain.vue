@@ -1,17 +1,21 @@
 <template>
   <div class="app-main">
-     <sidder class="sidder"></sidder>
-     <router-view class="content"></router-view>
+    <el-container>
+      <el-aside style="width:200px;">
+        <sidder></sidder>
+      </el-aside>
+      <router-view class="content"></router-view>
+    </el-container>
   </div>
 </template>
 
 <script>
-import sidder from "./Sidder"
+import sidder from "./Sidder";
 export default {
-   components:{
-     sidder
-   }
-}
+  components: {
+    sidder,
+  },
+};
 </script>
 
 <style scoped>
@@ -20,10 +24,8 @@ export default {
   display: flex;
   background: #fff;
 }
-.sidder {
-  width: 20%;
-}
-.content{
-  width: 80%;
+.content {
+  width: 100%;
+  padding: 0 100px;
 }
 </style>

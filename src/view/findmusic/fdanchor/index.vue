@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <div>主播电台</div>
 </template>
 
 <script>
