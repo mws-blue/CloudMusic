@@ -1,7 +1,7 @@
 <template>
   <el-carousel :interval="4000" type="card" height="180px">
     <el-carousel-item v-for="item in banners" :key="item.imageUrl">
-        <el-image class="item-banner" :src="item.imageUrl" fit="contain"></el-image>
+        <el-image class="item-banner" :src="item.imageUrl" fit="cover"></el-image>
     </el-carousel-item>
   </el-carousel>
 </template>

@@ -27,9 +27,14 @@ export default {
 
 <style scoped>
 .title-header{
+    width: 100%;
+    flex-shrink: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #E1E1E2;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
 }
 .name {
     font-size: 18px;

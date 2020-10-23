@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="fdstyle">
     <el-tabs class="fd-tabs" v-model="activeName" @tab-click="handleClick">
       <el-tab-pane
         v-for="item in tabs"
@@ -40,6 +40,7 @@ export default {
 <style scoped>
 .fd-tabs {
     width: 472px;
+    height: 50px;
     margin: 0 auto;
 }
 </style>

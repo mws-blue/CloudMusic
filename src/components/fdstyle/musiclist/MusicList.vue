@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="music-list">
       <title-header name="推荐歌单"></title-header>
       <music-list-item v-for="item in musicList" :item="item" :key="item.id"></music-list-item>
   </div>
@@ -37,6 +37,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.music-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 </style>

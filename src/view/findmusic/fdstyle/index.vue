@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="con-fdstyle">
     <swaper></swaper>
     <music-list></music-list>
   </div>
@@ -16,6 +16,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.con-fdstyle {
+  padding: 0 100px;
+   /* height: 510px;
+   overflow: auto; */
+}
 </style>

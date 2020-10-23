@@ -13,3 +13,11 @@ export function musicList(){
         }
     })
 }
+export function musicDetail(id){
+    return new request({
+        url:"/playlist/detail",
+        params:{
+            id:id
+        }
+    })
+}
