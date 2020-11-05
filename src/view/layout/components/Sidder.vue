@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="sidder">
     <el-menu
       mode="vertical"
       :router="true"
       :default-active="$route.path"
+      background-color="#EFEFF2"
       class="el-menu-vertical-demo"
     >
       <el-submenu index="1">
@@ -68,6 +69,10 @@ export default {
 </script>
 
 <style scoped>
+.sidder {
+  height: 100%;
+  background-color: #EFEFF2;
+}
 .findmusic {
   background: #ecf5ff;
   color: #40B8FF;

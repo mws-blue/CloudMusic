@@ -23,7 +23,7 @@ export default {
 .container {
   height: 680px;
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 60px;
   right: 60px;
 }

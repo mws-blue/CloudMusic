@@ -21,3 +21,17 @@ export function musicDetail(id){
         }
     })
 }
+
+export function songsComment(data) {
+    return new request({
+        url:"/comment/playlist",
+        params:data
+    })
+}
+
+export function getCollector(data){
+    return new request({
+        url:"/playlist/subscribers",
+        params:data
+    })
+}

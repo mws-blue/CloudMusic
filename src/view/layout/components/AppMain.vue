@@ -22,7 +22,7 @@ export default {
 .app-main {
   height: 560px;
   display: flex;
-  background: #fff;
+  background:#F8F7F7;
 }
 .content {
   width: 100%;
